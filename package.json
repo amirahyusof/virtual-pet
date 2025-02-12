@@ -1,36 +1,24 @@
 {
-  "name": "virtual-pet",
-  "productName": "virtual-pet",
+  "name": "toddler-math-app",
   "version": "1.0.0",
-  "description": "My Electron application description",
-  "main": "src/index.js",
+  "main": "main.js",
   "scripts": {
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make",
-    "publish": "electron-forge publish",
-    "lint": "echo \"No linting configured\""
+    "start": "webpack serve --mode development",
+    "electron": "electron ."
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "electron": "^25.0.0"
   },
   "devDependencies": {
-    "@electron-forge/cli": "^7.6.1",
-    "@electron-forge/maker-deb": "^7.6.1",
-    "@electron-forge/maker-rpm": "^7.6.1",
-    "@electron-forge/maker-squirrel": "^7.6.1",
-    "@electron-forge/maker-zip": "^7.6.1",
-    "@electron-forge/plugin-auto-unpack-natives": "^7.6.1",
-    "@electron-forge/plugin-fuses": "^7.6.1",
-    "@electron/fuses": "^1.8.0",
-    "electron": "34.1.1"
-  },
-  "keywords": [],
-  "author": {
-    "name": "amirah",
-    "email": "mirez.data@gmail.com"
-  },
-  "license": "MIT",
-  "dependencies": {
-    "electron-squirrel-startup": "^1.0.1",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "@babel/preset-env": "^7.26.8",
+    "@babel/preset-react": "^7.26.3",
+    "babel-loader": "^9.2.1",
+    "electron": "^34.1.1",
+    "html-webpack-plugin": "^5.6.3",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0"
   }
 }
