@@ -3,12 +3,14 @@ const path = require('path');
 
 let win;
 
+
 function createWindow() {
   win = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
       nodeIntegration: true,
+      contextIsolation: false,
     },
   });
 
@@ -32,4 +34,14 @@ app.on('activate', () => {
     createWindow();
   }
 });
+
+mainWindow.webContents.session.webRequest.onHeadersReceived((details, callback) => {
+  callback({
+    responseHeaders: {
+      ...details.responseHeaders,
+      "Content-Security-Policy": ["default-src 'self' 'unsafe-inline' 'unsafe-eval' data:"]
+    }
+  });
+});
+
 
